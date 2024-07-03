@@ -1,0 +1,154 @@
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES6 Demo</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <script src='assets/bootstrap/js/bootstrap.min.js'></script>
+</head>
+
+<body>
+  <script src="index.js" type="module"></script>
+  <div class="container-fluid">
+    <!-- jumbotron starts here -->
+    <div class="jumbotron">
+      <h1 class="display-3"><label id='lblTitle'></label></h1>
+      <p class="lead"><label id='lblTitleDescription'></label></p>
+    </div>
+    <!-- jumbotron starts here -->
+    <div class="row">
+      <div class="col-md-8">
+        <p class="h5">Your Holdings
+          <span id='txSec' class='badge badge-info'>transact</span>
+
+        </p>
+
+        <hr />
+
+
+        <div class="jumbotron" id='jmbTransact'>
+          <form id='txSecurity'>
+            <div class="form-group">
+              <label for="Name">Security Name</label>
+              <select class="form-control" id="AvailableSecurities"></select>
+              <small id="SecurityNameHelp" class="form-text text-muted"> Select one security</small>
+            </div>
+
+            <div class="form-group">
+              <label for="Quantity">Quantity</label>
+              <input type="number" class="form-control" id="txQuantity" aria-describedby="QuantityHelp"
+                placeholder="Enter Purchased Quantity">
+              <small id="txQuantityHelp" class="form-text text-muted"> E.g. 500</small>
+            </div>
+
+            <button class="btn btn-success" id='txBuy'>Buy</button> <button id='txSell'
+              class="btn btn-danger">Sell</button>
+
+          </form>
+
+
+        </div>
+
+
+        <table class="table table-striped" id="tblSecurities"></table>
+
+        <div class="row">
+          <div class="col-md-6">
+            <p class="h5">Top Recommendations</p>
+            <hr />
+            <ul class="list-group" id="ulrecommendations">
+
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <p class="h5">Details</p>
+            <hr />
+            <div id='divSecurityDetails'>
+              <!-- details here  -->
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <!-- available balance -->
+        <div class="jumbotron">
+          <p class="lead">Your available balance ($)</p>
+          <hr class="my-4">
+          <h1 class="display-1" id='balanceDisplay'>...loading</h1>
+        </div>
+
+        <!-- available balance -->
+        <!-- Add security form -->
+        <p class="h5">Add Security to Holdings</p>
+        <hr />
+        <form id='frmsecurity'>
+          <div class="form-group">
+            <label for="Name">Security Name</label>
+            <input type="text" class="form-control" id="Name" aria-describedby="SecurityNameHelp"
+              placeholder="Enter Security Name">
+            <small id="SecurityNameHelp" class="form-text text-muted"> E.g. Microsoft Inc.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="Price">Price</label>
+            <input type="number" class="form-control" id="Price" aria-describedby="PriceHelp"
+              placeholder="Enter Security Price">
+            <small id="PriceHelp" class="form-text text-muted"> E.g. 1966</small>
+          </div>
+
+          <div class="form-group">
+            <label for="Quantity">Quantity</label>
+            <input type="number" class="form-control" id="Quantity" aria-describedby="QuantityHelp"
+              placeholder="Enter Purchased Quantity">
+            <small id="QuantityHelp" class="form-text text-muted"> E.g. 500</small>
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="Sector">Sector</label>
+            <!-- <input type="text" class="form-control" id="Sector" aria-describedby="SectorHelp" placeholder="Enter Sector"> -->
+            <select class="form-control" id="Sector">
+              <option value="Engineering">Engineering</option>
+              <option value="Banking" selected="selected">Banking</option>
+              <option value="IT">IT</option>
+              <option value="Ancilliary">Ancilliary</option>
+              <option value="Pharmaceutics">Pharmaceutics</option>
+              <option value="Food Manufacturing">Food Manufacturing</option>
+              <option value="E-Commerce">E-Commerce</option>
+              <option value="Metal">Metal</option>
+              <option value="Oil">Oil</option>
+              <option value="Miscellanous">Miscellanous</option>
+            </select>
+            <small id="SectorHelp" class="form-text text-muted"> E.g. Manufacturing, Banking etc.</small>
+          </div>
+
+
+
+
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="FNOAvailable">
+            <label class="form-check-label" for="FNOAvailable">
+              Is FNO Available ? Tick if Available
+            </label>
+          </div>
+
+          <button type="click" id="btnSubmitSecurity" class="btn btn-primary">Save Security</button>
+          <button type="click" id="btnResetSecurity" class="btn btn-warning">Reset</button>
+        </form>
+        <!-- Add security form ends here -->
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
